@@ -85,9 +85,9 @@
             function playAudio() {
                 if (audio) {
                     audio.currentTime = 0; // Устанавливаем время воспроизведения в начало
-                    audio.play().catch(error => {
-                        console.error("Ошибка воспроизведения аудио:", error);
-                    });
+                    audio.play()
+                        .then(() => console.log("Аудио воспроизводится"))
+                        .catch(error => console.error("Ошибка воспроизведения аудио:", error));
                 } else {
                     console.error("Аудио элемент не найден.");
                 }
@@ -95,6 +95,7 @@
 
             if (button) {
                 button.addEventListener('click', () => {
+                    console.log("Кнопка нажата");
                     playAudio();
                 });
             } else {
