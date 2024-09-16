@@ -74,4 +74,33 @@
     </div>
 
     <!-- Элемент аудио для воспроизведения звука -->
-    <audio id="myAudio"
+    <audio id="myAudio" src="pukane-4.mp3" preload="metadata"></audio>
+
+    <!-- JavaScript код -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('button');
+            const audio = document.getElementById('myAudio');
+
+            function playAudio() {
+                if (audio) {
+                    audio.currentTime = 0; // Устанавливаем время воспроизведения в начало
+                    audio.play().catch(error => {
+                        console.error("Ошибка воспроизведения аудио:", error);
+                    });
+                } else {
+                    console.error("Аудио элемент не найден.");
+                }
+            }
+
+            if (button) {
+                button.addEventListener('click', () => {
+                    playAudio();
+                });
+            } else {
+                console.error("Кнопка не найдена.");
+            }
+        });
+    </script>
+</body>
+</html>
