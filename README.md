@@ -98,7 +98,7 @@
     </div>
 
     <!-- Элемент аудио для воспроизведения звука -->
-    <audio id="myAudio" src="C:/Users/Admin/Download/spukane-4.mp3" preload="auto"></audio>
+    <audio id="myAudio" src="spukane-4.mp3" preload="auto"></audio>
 
     <!-- Удаляем элемент для отображения смайлика -->
     <!-- <div id="poopEmoji" class="hidden">💩</div> -->
