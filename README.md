@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,28 +52,6 @@
             }
         }
 
-        /* Удаляем стили для смайлика */
-        /* #poopEmoji {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 10rem;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        #poopEmoji.show {
-            opacity: 1;
-        } */
-
         /* Адаптивность */
         @media (max-width: 600px) {
             button {
@@ -88,7 +65,6 @@
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>Добро пожаловать!</h1>
@@ -100,9 +76,6 @@
     <!-- Элемент аудио для воспроизведения звука -->
     <audio id="myAudio" src="spukane-4.mp3" preload="auto"></audio>
 
-    <!-- Удаляем элемент для отображения смайлика -->
-    <!-- <div id="poopEmoji" class="hidden">💩</div> -->
-
     <!-- JavaScript код -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -110,21 +83,24 @@
             const audio = document.getElementById('myAudio');
 
             function playAudio() {
-                audio.currentTime = 0;
-                audio.play().catch(error => {
-                    console.error("Ошибка воспроизведения аудио:", error);
-                });
+                if (audio) {
+                    audio.currentTime = 0; // Устанавливаем время воспроизведения в начало
+                    audio.play().catch(error => {
+                        console.error("Ошибка воспроизведения аудио:", error);
+                    });
+                } else {
+                    console.error("Аудио элемент не найден.");
+                }
             }
 
-            if (button && audio) {
+            if (button) {
                 button.addEventListener('click', () => {
                     playAudio();
                 });
             } else {
-                console.error("Не удалось найти элементы кнопки или аудио.");
+                console.error("Кнопка не найдена.");
             }
         });
     </script>
 </body>
-
 </html>
