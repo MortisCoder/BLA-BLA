@@ -74,7 +74,7 @@
     </div>
 
     <!-- Элемент аудио для воспроизведения звука -->
-    <audio id="myAudio" src="spukane-4.mp3" preload="auto"></audio>
+    <audio id="myAudio" src="pukane-4.mp3" preload="auto"></audio>
 
     <!-- JavaScript код -->
     <script>
